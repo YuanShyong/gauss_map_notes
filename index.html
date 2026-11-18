@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Geometry of the Gauss Map — Differential Geometry Chapter 3</title>
 
-  <!-- Fonts: Daylight Editorial (EB Garamond, Plus Jakarta Sans, JetBrains Mono) -->
+  <!-- Fonts: Nocturne (EB Garamond, Plus Jakarta Sans, JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,37 +22,37 @@
     :root {
       color-scheme: light;
 
-      /* Page and surfaces: 溫潤象牙白與淺灰階層 */
-      --background: #f8f9fc;
-      --surface-container-low: #f1f4f9;
+      /* Page and surfaces: Warm parchment & alabaster light steps */
+      --background: #f8f6f0;
+      --surface-container-low: #f1ede4;
       --surface-container: #ffffff;
-      --surface-container-high: #e7ecf5;
+      --surface-container-high: #e8e2d5;
 
-      /* Text: 深石板藍灰與次要灰 */
-      --on-surface: #141d2e;
-      --on-surface-variant: #4a5872;
+      /* Text */
+      --on-surface: #182232;
+      --on-surface-variant: #4a5970;
 
-      /* Borders: 細緻灰藍邊框 */
-      --outline: #9aa8c2;
-      --outline-variant: #d5deed;
+      /* Borders */
+      --outline: #9aa7bc;
+      --outline-variant: #d5cfc2;
 
-      /* Accents: 調深琥珀金、群青藍、翠綠與珊瑚紅 */
-      --primary: #b4781e;
+      /* Accents */
+      --primary: #b07018;
       --on-primary: #ffffff;
-      --on-primary-container: #8f5d12;
-      --tertiary: #0277bd;
-      --error: #c62828;
+      --on-primary-container: #8f580d;
+      --tertiary: #156e96;
+      --error: #c93b3b;
 
       /* Data series */
-      --data-1: #b4781e;
-      --data-2: #0277bd;
-      --data-3: #1b8a5a;
-      --data-4: #c84b31;
-      --data-context: #9aa8c2;
+      --data-1: #b07018;
+      --data-2: #156e96;
+      --data-3: #178556;
+      --data-4: #c85232;
+      --data-context: #7c8ca3;
 
       /* Semantic */
-      --positive: #1b8a5a;
-      --focus: #b4781e;
+      --positive: #178556;
+      --focus: #b07018;
 
       /* Fonts */
       --font-headline: 'EB Garamond', serif;
@@ -67,15 +67,15 @@
       /* Style effects */
       --hairline: 1px solid var(--outline-variant);
       --hairline-strong: 1px solid var(--outline);
-      --panel-highlight: 0 2px 8px rgba(20, 29, 46, 0.04);
-      --brass-glow: radial-gradient(circle at 88% 12%, rgba(180, 120, 30, 0.06), transparent 45%);
+      --panel-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      --brass-glow: radial-gradient(circle at 88% 12%, rgba(176, 112, 24, 0.08), transparent 45%);
       --heading-tracking: -0.015em;
       --label-tracking: 0.06em;
-      --sky-tint: color-mix(in srgb, var(--tertiary) 10%, transparent);
-      --brass-tint: color-mix(in srgb, var(--primary) 12%, transparent);
-      --mint-tint: color-mix(in srgb, var(--positive) 12%, transparent);
-      --coral-tint: color-mix(in srgb, var(--data-4) 12%, transparent);
-      --error-tint: color-mix(in srgb, var(--error) 12%, transparent);
+      --sky-tint: color-mix(in srgb, var(--tertiary) 12%, transparent);
+      --brass-tint: color-mix(in srgb, var(--primary) 14%, transparent);
+      --mint-tint: color-mix(in srgb, var(--positive) 14%, transparent);
+      --coral-tint: color-mix(in srgb, var(--data-4) 14%, transparent);
+      --error-tint: color-mix(in srgb, var(--error) 14%, transparent);
       --sky-border: color-mix(in srgb, var(--tertiary) 35%, transparent);
       --brass-border: color-mix(in srgb, var(--primary) 40%, transparent);
       --mint-border: color-mix(in srgb, var(--positive) 40%, transparent);
@@ -140,7 +140,7 @@
 
     /* Hero */
     .hero-header {
-      background-color: var(--surface-container);
+      background-color: var(--background);
       background-image: var(--brass-glow);
       border-bottom: var(--hairline);
       padding: var(--space-2xl) var(--space-lg) var(--space-xl);
@@ -225,7 +225,7 @@
       align-items: center;
       min-height: 44px;
       padding: var(--space-xs) var(--space-md);
-      background: var(--surface-container-low);
+      background: var(--surface-container);
       border: var(--hairline);
       border-radius: var(--rounded);
       color: var(--on-surface-variant);
@@ -324,7 +324,7 @@
       pointer-events: auto;
     }
     .well-title-pill {
-      background: color-mix(in srgb, var(--surface-container) 90%, transparent);
+      background: color-mix(in srgb, var(--background) 86%, transparent);
       border: var(--hairline);
       border-radius: var(--rounded);
       padding: var(--space-xs) var(--space-sm);
@@ -346,7 +346,7 @@
       font-size: var(--label-size);
       color: var(--on-surface-variant);
       pointer-events: none;
-      background: color-mix(in srgb, var(--surface-container) 88%, transparent);
+      background: color-mix(in srgb, var(--background) 80%, transparent);
       padding: 2px var(--space-xs);
       border-radius: var(--rounded);
     }
@@ -358,9 +358,8 @@
       gap: var(--space-md);
     }
     .formula-card {
-      background: var(--surface-container);
+      background: var(--surface-container-low);
       border: var(--hairline);
-      box-shadow: var(--panel-highlight);
       border-radius: var(--rounded-lg);
       padding: var(--space-md);
       display: grid;
@@ -381,7 +380,7 @@
     }
     .math-display {
       padding: var(--space-sm) var(--space-md);
-      background: var(--surface-container-low);
+      background: var(--background);
       border: var(--hairline);
       border-radius: var(--rounded);
       overflow-x: auto;
@@ -416,14 +415,13 @@
       font-family: var(--font-label);
       font-size: var(--label-size);
       color: var(--primary);
-      font-weight: 600;
       font-variant-numeric: tabular-nums;
     }
 
     select {
       min-height: 44px;
       padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--space-md);
-      background: var(--surface-container-low);
+      background: var(--background);
       color: var(--on-surface);
       border: var(--hairline-strong);
       border-radius: var(--rounded);
@@ -451,8 +449,7 @@
       height: 18px;
       border-radius: var(--rounded-full);
       background: var(--primary);
-      border: 2px solid var(--surface-container);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      border: 2px solid var(--background);
       margin-top: -7px;
       transition: transform var(--dur-micro) var(--ease-out);
     }
@@ -469,8 +466,7 @@
       height: 18px;
       border-radius: var(--rounded-full);
       background: var(--primary);
-      border: 2px solid var(--surface-container);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+      border: 2px solid var(--background);
     }
 
     /* Buttons */
@@ -489,7 +485,7 @@
       text-transform: uppercase;
       cursor: pointer;
       border: var(--hairline-strong);
-      background: var(--surface-container);
+      background: transparent;
       color: var(--on-surface);
       transition: background-color var(--dur-micro) var(--ease-out), border-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
     }
@@ -509,13 +505,11 @@
     .btn-primary:hover {
       background: var(--on-primary-container);
       border-color: var(--on-primary-container);
-      color: var(--on-primary);
     }
     .btn.is-active {
       background: var(--brass-tint);
       border-color: var(--primary);
       color: var(--primary);
-      font-weight: 600;
     }
     .btn-row {
       display: flex;
@@ -562,7 +556,7 @@
       gap: var(--space-sm);
     }
     .metric-tile {
-      background: var(--surface-container-low);
+      background: var(--background);
       border: var(--hairline);
       border-radius: var(--rounded);
       padding: var(--space-sm) var(--space-md);
@@ -579,7 +573,7 @@
     .metric-val {
       font-family: var(--font-label);
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 500;
       font-variant-numeric: tabular-nums;
       color: var(--on-surface);
     }
@@ -676,7 +670,7 @@
 
     /* Matrix readout */
     .matrix-box {
-      background: var(--surface-container-low);
+      background: var(--background);
       border: var(--hairline);
       border-radius: var(--rounded);
       padding: var(--space-sm) var(--space-md);
@@ -730,7 +724,7 @@
     .progress-track {
       width: 100%;
       height: 6px;
-      background: var(--surface-container-high);
+      background: var(--background);
       border: var(--hairline);
       border-radius: var(--rounded-full);
       overflow: hidden;
@@ -773,7 +767,7 @@
       min-height: 44px;
       text-align: left;
       padding: var(--space-sm) var(--space-md);
-      background: var(--surface-container-low);
+      background: var(--background);
       border: var(--hairline);
       border-radius: var(--rounded);
       color: var(--on-surface);
@@ -785,7 +779,7 @@
     }
     .quiz-opt:hover {
       border-color: var(--outline);
-      background: var(--surface-container-high);
+      background: var(--surface-container-low);
     }
     .quiz-opt.is-correct {
       background: var(--mint-tint);
@@ -801,12 +795,11 @@
       font-family: var(--font-label);
       font-size: var(--label-size);
       color: var(--primary);
-      font-weight: 600;
       padding-top: 2px;
       flex-shrink: 0;
     }
     .quiz-feedback {
-      background: var(--surface-container-low);
+      background: var(--background);
       border-left: 2px solid var(--primary);
       border-radius: var(--rounded);
       padding: var(--space-sm) var(--space-md);
@@ -867,7 +860,7 @@
         <p class="deck-brass">How does a surface bend in each tangent direction, and how do we compute that bending?</p>
       </div>
       <p class="hero-lede">
-        The first fundamental form $I_p$ measures intrinsic lengths, angles, and areas—yet a flat sheet and a rolled cylinder share identical $I_p$ while bending completely differently in $\mathbb{R}^3$. Chapter 3 captures extrinsic bending by tracking how the unit surface normal $N: S 	o S^2$ tilts across the tangent plane.
+        The first fundamental form $I_p$ measures intrinsic lengths, angles, and areas—yet a flat sheet and a rolled cylinder share identical $I_p$ while bending completely differently in $\mathbb{R}^3$. Chapter 3 captures extrinsic bending by tracking how the unit surface normal $N: S \to S^2$ tilts across the tangent plane.
       </p>
 
       <div class="pipeline-strip" aria-label="Chapter 3 conceptual chain">
@@ -906,23 +899,23 @@
 
       <div class="prose-col">
         <p>
-          Fix a differentiable unit normal $N$ on an oriented neighborhood of $S$. For any unit-speed curve $lpha(s)$ on $S$ passing through $lpha(0)=p$ with velocity $lpha'(0)=v$, the acceleration $lpha''(0)$ can split into turning inside $T_pS$ and bending out of $T_pS$. The <strong>normal curvature</strong> isolates only the normal component: $k_n = \langle lpha''(0), N(p) angle = k\cos	heta$.
+          Fix a differentiable unit normal $N$ on an oriented neighborhood of $S$. For any unit-speed curve $\alpha(s)$ on $S$ passing through $\alpha(0)=p$ with velocity $\alpha'(0)=v$, the acceleration $\alpha''(0)$ can split into turning inside $T_pS$ and bending out of $T_pS$. The <strong>normal curvature</strong> isolates only the normal component: $k_n = \langle \alpha''(0), N(p) \rangle = k\cos\theta$.
         </p>
         <p>
-          Differentiating $\langle lpha'(s), N(lpha(s))angle = 0$ yields $\langle lpha'', Nangle = -\langle lpha', dN(lpha')angle$, so $k_n(v) = -\langle dN_p(v), vangle$. By <strong>Meusnier’s Theorem</strong>, every surface curve through $p$ sharing the same tangent line has the exact same normal curvature—only the direction $v$ matters.
+          Differentiating $\langle \alpha'(s), N(\alpha(s))\rangle = 0$ yields $\langle \alpha'', N\rangle = -\langle \alpha', dN(\alpha')\rangle$, so $k_n(v) = -\langle dN_p(v), v\rangle$. By <strong>Meusnier’s Theorem</strong>, every surface curve through $p$ sharing the same tangent line has the exact same normal curvature—only the direction $v$ matters.
         </p>
       </div>
 
       <div class="formula-grid">
         <div class="formula-card">
           <h3>The Gauss Map &amp; Its Differential</h3>
-          <div class="math-display">$$N: S \longrightarrow S^2, \qquad dN_p(v) = \left.rac{d}{dt} N(lpha(t))ight|_{t=0} \in T_{N(p)}S^2 \cong T_p S$$</div>
+          <div class="math-display">$$N: S \longrightarrow S^2, \qquad dN_p(v) = \left.\frac{d}{dt} N(\alpha(t))\right|_{t=0} \in T_{N(p)}S^2 \cong T_p S$$</div>
           <p>Because $|N|=1$, $dN_p(v) \perp N(p)$, letting us identify $T_{N(p)}S^2$ with $T_p S$ as parallel planes.</p>
         </div>
         <div class="formula-card">
           <h3>Normal Curvature &amp; Cylinder Example</h3>
-          <div class="math-display">$$k_n(v) = -\langle dN_p(v), v angle, \qquad k_n^{	ext{cyl}}(	heta) = -rac{\cos^2	heta}{R}$$</div>
-          <p>On a cylinder with outward normal, the circular cross-section ($	heta=0$) gives $k_n = -1/R$ while the axial line ($	heta=\pi/2$) gives $k_n = 0$.</p>
+          <div class="math-display">$$k_n(v) = -\langle dN_p(v), v \rangle, \qquad k_n^{\text{cyl}}(\theta) = -\frac{\cos^2\theta}{R}$$</div>
+          <p>On a cylinder with outward normal, the circular cross-section ($\theta=0$) gives $k_n = -1/R$ while the axial line ($\theta=\pi/2$) gives $k_n = 0$.</p>
         </div>
       </div>
 
@@ -964,7 +957,7 @@
           </div>
           <div class="control-group">
             <div class="control-label-row">
-              <label for="g-theta">Tangent Angle $	heta$</label>
+              <label for="g-theta">Tangent Angle $\theta$</label>
               <span class="control-val" id="g-theta-val">30°</span>
             </div>
             <input type="range" id="g-theta" min="0" max="360" step="1" value="30" oninput="updateGaussFromControls()">
@@ -1001,14 +994,14 @@
 
         <div class="legend-bar">
           <span class="legend-item"><span class="swatch swatch-brass"></span>Unit Normal $N(p)$ / Image $N(U)$</span>
-          <span class="legend-item"><span class="swatch swatch-sky"></span>Unit Tangent $v(	heta)$</span>
+          <span class="legend-item"><span class="swatch swatch-sky"></span>Unit Tangent $v(\theta)$</span>
           <span class="legend-item"><span class="swatch swatch-mint"></span>Differential $dN_p(v)$</span>
           <span class="legend-item"><span class="swatch swatch-coral"></span>Normal Section Curve</span>
         </div>
 
         <div class="telemetry-grid">
           <div class="metric-tile">
-            <span class="metric-label">Normal Curvature $k_n(	heta)$</span>
+            <span class="metric-label">Normal Curvature $k_n(\theta)$</span>
             <span class="metric-val is-coral" id="g-kn">−0.536</span>
           </div>
           <div class="metric-tile">
@@ -1029,7 +1022,7 @@
           </div>
         </div>
         <p id="g-insight" style="margin: 0; font-size: 0.95rem; color: var(--on-surface-variant);">
-          On a cylinder, $N(S)$ collapses onto the equator of $S^2$: moving axially ($	heta=90^\circ$) gives $dN_p(v) = 0$ and $k_n = 0$.
+          On a cylinder, $N(S)$ collapses onto the equator of $S^2$: moving axially ($\theta=90^\circ$) gives $dN_p(v) = 0$ and $k_n = 0$.
         </p>
       </div>
     </section>
@@ -1045,23 +1038,23 @@
 
       <div class="prose-col">
         <p>
-          Because $dN_p$ is self-adjoint ($\langle dN_p(v), wangle = \langle v, dN_p(w)angle$), the <strong>shape operator</strong> $A_p = -dN_p$ admits an orthonormal basis $\{e_1, e_2\}$ of <strong>principal directions</strong> with eigenvalues $k_1 \ge k_2$ (the <strong>principal curvatures</strong>). For any unit vector $v = e_1\cos	heta + e_2\sin	heta$, the second fundamental form $II_p(v) = \langle A_p(v), vangle$ simplifies to <strong>Euler’s Formula</strong>.
+          Because $dN_p$ is self-adjoint ($\langle dN_p(v), w\rangle = \langle v, dN_p(w)\rangle$), the <strong>shape operator</strong> $A_p = -dN_p$ admits an orthonormal basis $\{e_1, e_2\}$ of <strong>principal directions</strong> with eigenvalues $k_1 \ge k_2$ (the <strong>principal curvatures</strong>). For any unit vector $v = e_1\cos\theta + e_2\sin\theta$, the second fundamental form $II_p(v) = \langle A_p(v), v\rangle$ simplifies to <strong>Euler’s Formula</strong>.
         </p>
         <p>
-          Visualizing $II_p(x e_1 + y e_2) = k_1 x^2 + k_2 y^2 = \pm 1$ in the tangent plane produces the <strong>Dupin indicatrix</strong>: a conic whose radial distance in direction $	heta$ is $r(	heta) = 1/\sqrt{|k_n(	heta)|}$—an ellipse when $K&gt;0$, conjugate hyperbolas revealing the two <strong>asymptotic directions</strong> ($k_n=0$) when $K&lt;0$, and parallel lines when $K=0$.
+          Visualizing $II_p(x e_1 + y e_2) = k_1 x^2 + k_2 y^2 = \pm 1$ in the tangent plane produces the <strong>Dupin indicatrix</strong>: a conic whose radial distance in direction $\theta$ is $r(\theta) = 1/\sqrt{|k_n(\theta)|}$—an ellipse when $K&gt;0$, conjugate hyperbolas revealing the two <strong>asymptotic directions</strong> ($k_n=0$) when $K&lt;0$, and parallel lines when $K=0$.
         </p>
       </div>
 
       <div class="formula-grid">
         <div class="formula-card">
           <h3>Second Form &amp; Euler's Formula</h3>
-          <div class="math-display">$$II_p(w) = \langle A_p(w), w angle, \qquad k_n(	heta) = k_1\cos^2	heta + k_2\sin^2	heta$$</div>
+          <div class="math-display">$$II_p(w) = \langle A_p(w), w \rangle, \qquad k_n(\theta) = k_1\cos^2\theta + k_2\sin^2\theta$$</div>
           <p>Maximum and minimum normal bending occur along the orthogonal principal axes $e_1$ and $e_2$.</p>
         </div>
         <div class="formula-card">
           <h3>Dupin Indicatrix &amp; Rodrigues</h3>
-          <div class="math-display">$$k_1 x^2 + k_2 y^2 = \pm 1, \qquad rac{d}{dt}N(lpha(t)) = -k(t)lpha'(t)$$</div>
-          <p>Lines of curvature satisfy Olinde Rodrigues’ criterion: $dN(lpha')$ is collinear with $lpha'$.</p>
+          <div class="math-display">$$k_1 x^2 + k_2 y^2 = \pm 1, \qquad \frac{d}{dt}N(\alpha(t)) = -k(t)\alpha'(t)$$</div>
+          <p>Lines of curvature satisfy Olinde Rodrigues’ criterion: $dN(\alpha')$ is collinear with $\alpha'$.</p>
         </div>
       </div>
 
@@ -1097,7 +1090,7 @@
           </div>
           <div class="control-group">
             <div class="control-label-row">
-              <label for="d-theta">Direction $	heta$</label>
+              <label for="d-theta">Direction $\theta$</label>
               <span class="control-val" id="d-theta-val">28°</span>
             </div>
             <input type="range" id="d-theta" min="0" max="360" step="1" value="28" oninput="updateDupin()">
@@ -1116,12 +1109,12 @@
           </div>
 
           <div class="svg-well">
-            <p class="coord-label" style="margin: 0;">Euler's Formula · $k_n(	heta) = k_1\cos^2	heta + k_2\sin^2	heta$</p>
+            <p class="coord-label" style="margin: 0;">Euler's Formula · $k_n(\theta) = k_1\cos^2\theta + k_2\sin^2\theta$</p>
             <svg id="svg-euler" viewBox="0 0 380 300" aria-label="Euler normal curvature plot"></svg>
             <div class="legend-bar">
-              <span class="legend-item"><span class="swatch swatch-brass"></span>$k_n(	heta)$ curve</span>
-              <span class="legend-item"><span class="swatch swatch-sky"></span>Mean $H = rac{1}{2}(k_1+k_2)$</span>
-              <span class="legend-item"><span class="swatch swatch-coral"></span>Active direction $	heta$</span>
+              <span class="legend-item"><span class="swatch swatch-brass"></span>$k_n(\theta)$ curve</span>
+              <span class="legend-item"><span class="swatch swatch-sky"></span>Mean $H = \frac{1}{2}(k_1+k_2)$</span>
+              <span class="legend-item"><span class="swatch swatch-coral"></span>Active direction $\theta$</span>
             </div>
           </div>
         </div>
@@ -1132,7 +1125,7 @@
             <span class="metric-val is-brass" id="d-ordered">1.20, −0.80</span>
           </div>
           <div class="metric-tile">
-            <span class="metric-label">Normal Curvature $k_n(	heta)$</span>
+            <span class="metric-label">Normal Curvature $k_n(\theta)$</span>
             <span class="metric-val is-coral" id="d-kn">0.759</span>
           </div>
           <div class="metric-tile">
@@ -1162,7 +1155,7 @@
 
       <div class="prose-col">
         <p>
-          Given any parametrization $\mathbf{x}(u,v)$, the coefficients $e = \langle \mathbf{x}_{uu}, Nangle$, $f = \langle \mathbf{x}_{uv}, Nangle$, $g = \langle \mathbf{x}_{vv}, Nangle$ pair with the metric coefficients $E, F, G$ to yield $K = (eg-f^2)/(EG-F^2)$ and $H = (eG - 2fF + gE)/(2(EG-F^2))$. The sign of $K = \det(dN_p)$ classifies every surface point into four distinct geometric regimes.
+          Given any parametrization $\mathbf{x}(u,v)$, the coefficients $e = \langle \mathbf{x}_{uu}, N\rangle$, $f = \langle \mathbf{x}_{uv}, N\rangle$, $g = \langle \mathbf{x}_{vv}, N\rangle$ pair with the metric coefficients $E, F, G$ to yield $K = (eg-f^2)/(EG-F^2)$ and $H = (eG - 2fF + gE)/(2(EG-F^2))$. The sign of $K = \det(dN_p)$ classifies every surface point into four distinct geometric regimes.
         </p>
       </div>
 
@@ -1191,8 +1184,7 @@
             </tr>
             <tr>
               <td><span class="badge badge-brass">Parabolic</span></td>
-              <td class="mono">$K = 0,\; A_p 
-e 0$</td>
+              <td class="mono">$K = 0,\; A_p \ne 0$</td>
               <td>One line ($k_2=0$ or $k_1=0$)</td>
               <td>Bends along one principal axis only (Cylinder, Torus crown/keel)</td>
             </tr>
@@ -1291,11 +1283,11 @@ e 0$</td>
               x(u,v) = ((a + r cos u) cos v, (a + r cos u) sin v, r sin u)
             </p>
             <div class="matrix-row">
-              <span>First Form $M = egin{pmatrix}E &amp; F\ F &amp; G\end{pmatrix}$</span>
+              <span>First Form $M = \begin{pmatrix}E &amp; F\\ F &amp; G\end{pmatrix}$</span>
               <div class="matrix-bracket" id="atlas-M"><span>0.42</span><span>0.00</span><span>0.00</span><span>4.52</span></div>
             </div>
             <div class="matrix-row">
-              <span>Second Form $B = egin{pmatrix}e &amp; f\ f &amp; g\end{pmatrix}$</span>
+              <span>Second Form $B = \begin{pmatrix}e &amp; f\\ f &amp; g\end{pmatrix}$</span>
               <div class="matrix-bracket" id="atlas-B"><span>−0.65</span><span>0.00</span><span>0.00</span><span>−1.89</span></div>
             </div>
             <div class="matrix-row">
@@ -1317,8 +1309,7 @@ e 0$</td>
               </div>
               <div class="metric-tile">
                 <span class="metric-label">Umbilical?</span>
-                <span class="metric-val" id="atlas-umb">No ($k_1 
-e k_2$)</span>
+                <span class="metric-val" id="atlas-umb">No ($k_1 \ne k_2$)</span>
               </div>
             </div>
             <p id="atlas-note" style="margin: 0; font-size: 0.9rem; color: var(--on-surface-variant);">
@@ -1340,7 +1331,7 @@ e k_2$)</span>
 
       <div class="prose-col">
         <p>
-          A differentiable vector field on $V \subset S$ assigns a tangent vector $w(p) = a(u,v)\mathbf{x}_u + b(u,v)\mathbf{x}_v \in T_pS$ to each point, with integral trajectories solving $lpha'(t) = w(lpha(t))$. As the cylinder field $w = \mathbf{x}_u$ shows, constant coordinate coefficients $(1,0)$ still rotate in $\mathbb{R}^3$—foreshadowing Chapter 4’s covariant derivative.
+          A differentiable vector field on $V \subset S$ assigns a tangent vector $w(p) = a(u,v)\mathbf{x}_u + b(u,v)\mathbf{x}_v \in T_pS$ to each point, with integral trajectories solving $\alpha'(t) = w(\alpha(t))$. As the cylinder field $w = \mathbf{x}_u$ shows, constant coordinate coefficients $(1,0)$ still rotate in $\mathbb{R}^3$—foreshadowing Chapter 4’s covariant derivative.
         </p>
         <p>
           Globally, topology governs where $w$ must vanish. By the Poincaré–Hopf / <strong>Hairy Ball Theorem</strong>, the sum of singularity indices equals the Euler characteristic $\chi(S)$. On $S^2$ ($\chi=2$), every continuous tangent field must have at least one zero; on a torus ($\chi=0$) or cylinder, tangent flow can circulate smoothly with zero singularities.
@@ -1424,10 +1415,10 @@ e k_2$)</span>
 
       <div class="prose-col">
         <p>
-          A <strong>ruled surface</strong> $\mathbf{x}(t,v) = lpha(t) + v\,w(t)$ ($|w|=1$) is swept by straight lines. Because $\mathbf{x}_{vv} = 0$, the coefficient $g$ vanishes identically, forcing $K = -f^2/(EG-F^2) \le 0$ everywhere—proving a sphere ($K&gt;0$) can never contain an open ruled patch. When the triple product $(w, w', lpha') = 0$, $f=0$ and $K=0$: the surface is <strong>developable</strong>. Along non-cylindrical ruled surfaces, the <strong>line of striction</strong> ($\langle lpha'(t), w'(t)angle = 0$) traces the narrowest throat where neighboring rulings pass closest.
+          A <strong>ruled surface</strong> $\mathbf{x}(t,v) = \alpha(t) + v\,w(t)$ ($|w|=1$) is swept by straight lines. Because $\mathbf{x}_{vv} = 0$, the coefficient $g$ vanishes identically, forcing $K = -f^2/(EG-F^2) \le 0$ everywhere—proving a sphere ($K&gt;0$) can never contain an open ruled patch. When the triple product $(w, w', \alpha') = 0$, $f=0$ and $K=0$: the surface is <strong>developable</strong>. Along non-cylindrical ruled surfaces, the <strong>line of striction</strong> ($\langle \alpha'(t), w'(t)\rangle = 0$) traces the narrowest throat where neighboring rulings pass closest.
         </p>
         <p>
-          By contrast, a surface is <strong>minimal</strong> when its mean curvature vanishes ($H = 0$, so $k_2 = -k_1$ and $K = -k_1^2 \le 0$). The first variation of area under normal perturbations $\mathbf{x} + t h N$ is $A'(0) = -2\iint h H \sqrt{EG-F^2}\,du\,dv$, meaning $H \equiv 0$ characterizes critical points of area. Remarkably, the <strong>catenoid</strong> and <strong>helicoid</strong> are joined by a continuous 1-parameter family of minimal surfaces that preserves every intrinsic length and angle ($I_	heta \equiv I_0$).
+          By contrast, a surface is <strong>minimal</strong> when its mean curvature vanishes ($H = 0$, so $k_2 = -k_1$ and $K = -k_1^2 \le 0$). The first variation of area under normal perturbations $\mathbf{x} + t h N$ is $A'(0) = -2\iint h H \sqrt{EG-F^2}\,du\,dv$, meaning $H \equiv 0$ characterizes critical points of area. Remarkably, the <strong>catenoid</strong> and <strong>helicoid</strong> are joined by a continuous 1-parameter family of minimal surfaces that preserves every intrinsic length and angle ($I_\theta \equiv I_0$).
         </p>
       </div>
 
@@ -1471,13 +1462,12 @@ e k_2$)</span>
 
         <div class="telemetry-grid">
           <div class="metric-tile">
-            <span class="metric-label">Coefficient $g = \langle \mathbf{x}_{vv}, Nangle$</span>
+            <span class="metric-label">Coefficient $g = \langle \mathbf{x}_{vv}, N\rangle$</span>
             <span class="metric-val is-sky">0 (Always!)</span>
           </div>
           <div class="metric-tile">
-            <span class="metric-label">Developable $(w,w',lpha')=0$?</span>
-            <span class="metric-val is-brass" id="ruled-dev">No ($f 
-e 0$)</span>
+            <span class="metric-label">Developable $(w,w',\alpha')=0$?</span>
+            <span class="metric-val is-brass" id="ruled-dev">No ($f \ne 0$)</span>
           </div>
           <div class="metric-tile">
             <span class="metric-label">Gaussian Curvature $K$</span>
@@ -1495,10 +1485,10 @@ e 0$)</span>
         <div class="quiz-header">
           <div>
             <p class="coord-label">Interactive Laboratory V-B · Continuous Isometric Deformation</p>
-            <h3 style="font-family: var(--font-headline); font-weight: 500; font-size: var(--subhead-size); margin: 0;">Catenoid $\longleftrightarrow$ Helicoid Associate Family ($	heta \in [0^\circ, 90^\circ]$)</h3>
+            <h3 style="font-family: var(--font-headline); font-weight: 500; font-size: var(--subhead-size); margin: 0;">Catenoid $\longleftrightarrow$ Helicoid Associate Family ($\theta \in [0^\circ, 90^\circ]$)</h3>
           </div>
           <div class="btn-row">
-            <button type="button" class="btn btn-sm btn-primary" id="def-play-btn" onclick="toggleDeformAnim()">Animate $	heta$</button>
+            <button type="button" class="btn btn-sm btn-primary" id="def-play-btn" onclick="toggleDeformAnim()">Animate $\theta$</button>
             <button type="button" class="btn btn-sm" onclick="setDeformTheta(0)">Catenoid (0°)</button>
             <button type="button" class="btn btn-sm" onclick="setDeformTheta(45)">45°</button>
             <button type="button" class="btn btn-sm" onclick="setDeformTheta(90)">Helicoid (90°)</button>
@@ -1506,13 +1496,13 @@ e 0$)</span>
         </div>
 
         <div class="math-display">
-          $$\mathbf{x}_	heta(u,v) = \cos	hetaegin{pmatrix}\cosh v\cos u\ \cosh v\sin u\ v\end{pmatrix} + \sin	hetaegin{pmatrix}\sinh v\sin u\ -\sinh v\cos u\ -u\end{pmatrix}$$
+          $$\mathbf{x}_\theta(u,v) = \cos\theta\begin{pmatrix}\cosh v\cos u\\ \cosh v\sin u\\ v\end{pmatrix} + \sin\theta\begin{pmatrix}\sinh v\sin u\\ -\sinh v\cos u\\ -u\end{pmatrix}$$
         </div>
 
         <div class="controls-bar">
           <div class="control-group">
             <div class="control-label-row">
-              <label for="def-theta">Deformation Angle $	heta$</label>
+              <label for="def-theta">Deformation Angle $\theta$</label>
               <span class="control-val" id="def-theta-val">0° (Catenoid)</span>
             </div>
             <input type="range" id="def-theta" min="0" max="90" step="0.5" value="0" oninput="updateDeformFromSlider(this.value)">
@@ -1546,7 +1536,7 @@ e 0$)</span>
           </div>
           <div class="metric-tile">
             <span class="metric-label">Mean Curvature $H$ (Minimal)</span>
-            <span class="metric-val is-sky">0.000 (All $	heta$)</span>
+            <span class="metric-val is-sky">0.000 (All $\theta$)</span>
           </div>
           <div class="metric-tile">
             <span class="metric-label">Gaussian $K = -\operatorname{sech}^4 v$</span>
@@ -1558,7 +1548,7 @@ e 0$)</span>
           </div>
         </div>
         <p style="margin: 0; font-size: 0.94rem; color: var(--on-surface-variant);">
-          Watch the brass $u$-curve open from a closed circle into a helix while the sky $v$-catenary straightens into a ruling—without changing a single intrinsic length ($E=G=\cosh^2 v$, $F=0$). Only the second fundamental form $(e, f, g) = (-\cos	heta, -\sin	heta, \cos	heta)$ rotates, sending principal lines into asymptotic lines!
+          Watch the brass $u$-curve open from a closed circle into a helix while the sky $v$-catenary straightens into a ruling—without changing a single intrinsic length ($E=G=\cosh^2 v$, $F=0$). Only the second fundamental form $(e, f, g) = (-\cos\theta, -\sin\theta, \cos\theta)$ rotates, sending principal lines into asymptotic lines!
         </p>
       </div>
     </section>
@@ -1640,16 +1630,16 @@ e 0$)</span>
       const cs = getComputedStyle(document.documentElement);
       const get = (name, fallback) => (cs.getPropertyValue(name) || fallback).trim();
       return {
-        bg: get('--background', '#f8f9fc'),
+        bg: get('--background', '#f8f6f0'),
         surface: get('--surface-container', '#ffffff'),
-        ivory: get('--on-surface', '#141d2e'),
-        slate: get('--on-surface-variant', '#4a5872'),
-        outline: get('--outline', '#9aa8c2'),
-        outlineVar: get('--outline-variant', '#d5deed'),
-        brass: get('--primary', '#b4781e'),
-        sky: get('--tertiary', '#0277bd'),
-        mint: get('--positive', '#1b8a5a'),
-        coral: get('--data-4', '#c84b31')
+        ivory: get('--on-surface', '#182232'),
+        slate: get('--on-surface-variant', '#4a5970'),
+        outline: get('--outline', '#9aa7bc'),
+        outlineVar: get('--outline-variant', '#d5cfc2'),
+        brass: get('--primary', '#b07018'),
+        sky: get('--tertiary', '#156e96'),
+        mint: get('--positive', '#178556'),
+        coral: get('--data-4', '#c85232')
       };
     }
 
@@ -1910,11 +1900,11 @@ e 0$)</span>
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 0.78));
-      const keyLight = new THREE.DirectionalLight(0xffffff, 0.85);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      const keyLight = new THREE.DirectionalLight(0xfff5e4, 0.95);
       keyLight.position.set(5, 8, 6);
       scene.add(keyLight);
-      const rimLight = new THREE.DirectionalLight(0x0277bd, 0.35);
+      const rimLight = new THREE.DirectionalLight(0x7cc4e8, 0.45);
       rimLight.position.set(-6, -3, -5);
       scene.add(rimLight);
 
@@ -1923,7 +1913,7 @@ e 0$)</span>
       scene.add(mathRoot);
 
       const axes = new THREE.Group();
-      const axMat = new THREE.LineBasicMaterial({ color: new THREE.Color(PAL.outline), transparent: true, opacity: 0.55 });
+      const axMat = new THREE.LineBasicMaterial({ color: new THREE.Color(PAL.outlineVar), transparent: true, opacity: 0.65 });
       [
         [[-2.5, 0, 0], [2.5, 0, 0]],
         [[0, -2.5, 0], [0, 2.5, 0]],
@@ -2021,7 +2011,7 @@ e 0$)</span>
       const cBrass = new THREE.Color(PAL.brass);
       const cSky = new THREE.Color(PAL.sky);
       const cMint = new THREE.Color(PAL.mint);
-      const cBase = new THREE.Color(PAL.outlineVar).lerp(cSky, 0.24);
+      const cBase = new THREE.Color(PAL.outlineVar).lerp(cSky, 0.12);
 
       if (mode === 'class') {
         const tol = 0.03;
@@ -2060,7 +2050,7 @@ e 0$)</span>
           if (heatmapMode === 'K') col = colorFromCurvature(dg.K, 'K', dg.k1, dg.k2);
           else if (heatmapMode === 'H') col = colorFromCurvature(dg.H, 'H', dg.k1, dg.k2);
           else if (heatmapMode === 'class') col = colorFromCurvature(dg.K, 'class', dg.k1, dg.k2);
-          else col = new THREE.Color(PAL.outlineVar).lerp(new THREE.Color(PAL.sky), 0.28);
+          else col = new THREE.Color(PAL.outlineVar).lerp(new THREE.Color(PAL.sky), 0.18);
           colors.push(col.r, col.g, col.b);
         }
       }
@@ -2159,11 +2149,11 @@ e 0$)</span>
         gaussState.vpS2.mathRoot.add(gaussState.dynS2);
         gaussState.vpS2.mathRoot.add(new THREE.Mesh(
           new THREE.SphereGeometry(1, 32, 24),
-          new THREE.MeshPhongMaterial({ color: new THREE.Color(PAL.outlineVar), transparent: true, opacity: 0.45, shininess: 30 })
+          new THREE.MeshPhongMaterial({ color: new THREE.Color(PAL.surface), transparent: true, opacity: 0.42, shininess: 30 })
         ));
         gaussState.vpS2.mathRoot.add(new THREE.LineSegments(
           new THREE.WireframeGeometry(new THREE.SphereGeometry(1.002, 16, 12)),
-          new THREE.LineBasicMaterial({ color: new THREE.Color(PAL.outline), transparent: true, opacity: 0.45 })
+          new THREE.LineBasicMaterial({ color: new THREE.Color(PAL.outlineVar), transparent: true, opacity: 0.55 })
         ));
       }
       const sel = document.getElementById('g-surface');
@@ -2785,7 +2775,7 @@ e 0$)</span>
 
       const geo = buildParametricMesh(surf, cfg.param, surf.defaultSign, 'plain');
       vfState.dyn.add(new THREE.Mesh(geo, new THREE.MeshPhongMaterial({
-        color: new THREE.Color(PAL.outlineVar).lerp(new THREE.Color(PAL.sky), 0.25),
+        color: new THREE.Color(PAL.surface).lerp(new THREE.Color(PAL.sky), 0.15),
         side: THREE.DoubleSide, shininess: 24, transparent: true, opacity: 0.88
       })));
 
@@ -3201,81 +3191,81 @@ e 0$)</span>
       {
         id: 'cp31_1',
         tag: 'Checkpoint 3-1 · Curve vs Surface Bending',
-        q: 'Why does the planar circle $\alpha(s) = (r\cos(s/r), r\sin(s/r), 0)$ in the plane $z=0$ have curve curvature $k = 1/r > 0$ yet normal curvature $k_n = 0$?',
+        q: 'Why does the planar circle $\\alpha(s) = (r\\cos(s/r), r\\sin(s/r), 0)$ in the plane $z=0$ have curve curvature $k = 1/r > 0$ yet normal curvature $k_n = 0$?',
         opts: [
-          'Because $k_n = k \sin\theta$ and $\theta = 0$ on a flat plane.',
-          'Because its acceleration $\alpha''$ lies completely inside the tangent plane ($\langle \alpha'', N \rangle = 0$).',
+          'Because $k_n = k \\sin\\theta$ and $\\theta = 0$ on a flat plane.',
+          'Because its acceleration $\\alpha\'\'$ lies completely inside the tangent plane ($\\langle \\alpha\'\', N \\rangle = 0$).',
           'Because every unit-speed curve on a surface has zero normal acceleration.'
         ],
         correct: 1,
-        exp: 'The circle turns entirely within the plane $z=0$. Its principal normal is perpendicular to $N = (0,0,1)$, so its normal component $\langle \alpha'', N\rangle$ vanishes.'
+        exp: 'The circle turns entirely within the plane $z=0$. Its principal normal is perpendicular to $N = (0,0,1)$, so its normal component $\\langle \\alpha\'\', N\\rangle$ vanishes.'
       },
       {
         id: 'cp31_2',
         tag: 'Checkpoint 3-1 · Cylinder Directional Bending',
-        q: 'On a cylinder of radius $R = 2$ with outward normal, what is the normal curvature $k_n$ at angle $\theta = \pi/3$ to the circular direction?',
+        q: 'On a cylinder of radius $R = 2$ with outward normal, what is the normal curvature $k_n$ at angle $\\theta = \\pi/3$ to the circular direction?',
         opts: [
-          '$-\frac{1}{8}$',
-          '$-\frac{3}{8}$',
-          '$-\frac{1}{2}$'
+          '$-\\frac{1}{8}$',
+          '$-\\frac{3}{8}$',
+          '$-\\frac{1}{2}$'
         ],
         correct: 0,
-        exp: 'Using $k_n(\theta) = -\cos^2\theta / R$ with $\cos(\pi/3) = 1/2$ and $R = 2$, we get $k_n = -(1/4)/2 = -1/8$.'
+        exp: 'Using $k_n(\\theta) = -\\cos^2\\theta / R$ with $\\cos(\\pi/3) = 1/2$ and $R = 2$, we get $k_n = -(1/4)/2 = -1/8$.'
       },
       {
         id: 'cp31_3',
         tag: 'Checkpoint 3-1 · Single Zero Direction',
         q: 'If $k_n = 0$ in one tangent direction at $p$, must the surface be locally a plane?',
         opts: [
-          'Yes, vanishing normal curvature in any direction forces $II_p \equiv 0$.',
+          'Yes, vanishing normal curvature in any direction forces $II_p \\equiv 0$.',
           'No—the axial direction on a cylinder already has $k_n = 0$ while the circular direction has $k_n = -1/R$.',
           'Yes, unless the point is elliptic.'
         ],
         correct: 1,
-        exp: 'A cylinder has $k_n = 0$ along its straight rulings ($\theta = \pi/2$), and a hyperbolic saddle even has two asymptotic directions with $k_n = 0$.'
+        exp: 'A cylinder has $k_n = 0$ along its straight rulings ($\\theta = \\pi/2$), and a hyperbolic saddle even has two asymptotic directions with $k_n = 0$.'
       },
       {
         id: 'cp32_1',
         tag: 'Checkpoint 3-2 · Reading Curvature Data',
-        q: 'At a point where $E=G=1,\; F=0$ and $e=2,\; f=0,\; g=-1$, find $K$, $H$, and $k_n$ in the unit direction $(\mathbf{x}_u + \mathbf{x}_v)/\sqrt{2}$.',
+        q: 'At a point where $E=G=1,\\; F=0$ and $e=2,\\; f=0,\\; g=-1$, find $K$, $H$, and $k_n$ in the unit direction $(\\mathbf{x}_u + \\mathbf{x}_v)/\\sqrt{2}$.',
         opts: [
-          '$K = -2,\; H = 1/2,\; k_n = 1/2$',
-          '$K = 2,\; H = 1/2,\; k_n = 3/2$',
-          '$K = -2,\; H = -1/2,\; k_n = -1/2$'
+          '$K = -2,\\; H = 1/2,\\; k_n = 1/2$',
+          '$K = 2,\\; H = 1/2,\\; k_n = 3/2$',
+          '$K = -2,\\; H = -1/2,\\; k_n = -1/2$'
         ],
         correct: 0,
-        exp: '$K = (eg-f^2)/(EG-F^2) = -2$, $H = (eG+gE)/(2EG) = (2-1)/2 = 1/2$, and $k_n = II(w)/I(w) = (2\cdot 1^2 - 1\cdot 1^2)/(1^2+1^2) = 1/2$.'
+        exp: '$K = (eg-f^2)/(EG-F^2) = -2$, $H = (eG+gE)/(2EG) = (2-1)/2 = 1/2$, and $k_n = II(w)/I(w) = (2\\cdot 1^2 - 1\\cdot 1^2)/(1^2+1^2) = 1/2$.'
       },
       {
         id: 'cp32_2',
         tag: 'Checkpoint 3-2 · Orientation Reversal',
-        q: 'When the surface orientation is reversed ($N \mapsto -N$), which curvature invariants change sign?',
+        q: 'When the surface orientation is reversed ($N \\mapsto -N$), which curvature invariants change sign?',
         opts: [
           'Both $K$ and $H$ change sign.',
           '$H$, $k_n$, and $A_p$ change sign, whereas $K = k_1 k_2$ is unchanged.',
           'Only $K$ changes sign; $H$ and $k_n$ are invariant.'
         ],
         correct: 1,
-        exp: 'Reversing $N$ negates $dN_p$, $A_p$, $II_p$, $k_n$, and $H$, sending $(k_1, k_2) \mapsto (-k_2, -k_1)$. Their product $K = k_1 k_2$ remains invariant.'
+        exp: 'Reversing $N$ negates $dN_p$, $A_p$, $II_p$, $k_n$, and $H$, sending $(k_1, k_2) \\mapsto (-k_2, -k_1)$. Their product $K = k_1 k_2$ remains invariant.'
       },
       {
         id: 'cp33_1',
         tag: 'Checkpoint 3-3 · Minimal Surfaces & Ruled Patches',
-        q: 'Why can a sphere ($K = 1/R^2 > 0$) never contain an open regular ruled patch, and why does $H = 0$ imply $K \le 0$?',
+        q: 'Why can a sphere ($K = 1/R^2 > 0$) never contain an open regular ruled patch, and why does $H = 0$ imply $K \\le 0$?',
         opts: [
-          'Ruled patches have $g = 0 \implies K = -f^2/(EG-F^2) \le 0$; minimal surfaces have $k_2 = -k_1 \implies K = -k_1^2 \le 0$.',
+          'Ruled patches have $g = 0 \\implies K = -f^2/(EG-F^2) \\le 0$; minimal surfaces have $k_2 = -k_1 \\implies K = -k_1^2 \\le 0$.',
           'Because both ruled and minimal surfaces must be flat planes ($K=0$).',
           'Because ruled patches require $H > 0$ everywhere.'
         ],
         correct: 0,
-        exp: 'Along any ruling $\mathbf{x}_{vv}=0 \implies g=0$, giving $K \le 0$. Likewise $H=0$ gives $k_2=-k_1$, so $K=-k_1^2 \le 0$—forbidding any open piece of a sphere.'
+        exp: 'Along any ruling $\\mathbf{x}_{vv}=0 \\implies g=0$, giving $K \\le 0$. Likewise $H=0$ gives $k_2=-k_1$, so $K=-k_1^2 \\le 0$—forbidding any open piece of a sphere.'
       },
       {
         id: 'synth_dupin',
         tag: 'Synthesis · Dupin Indicatrix',
-        q: 'At a hyperbolic point ($K < 0$), what does the Dupin indicatrix $k_1 x^2 + k_2 y^2 = \pm 1$ consist of?',
+        q: 'At a hyperbolic point ($K < 0$), what does the Dupin indicatrix $k_1 x^2 + k_2 y^2 = \\pm 1$ consist of?',
         opts: [
-          'A single ellipse whose semi-axes have lengths $1/\sqrt{k_1}$ and $1/\sqrt{k_2}$.',
+          'A single ellipse whose semi-axes have lengths $1/\\sqrt{k_1}$ and $1/\\sqrt{k_2}$.',
           'A pair of conjugate hyperbolas whose common asymptotes mark the two directions where $k_n = 0$.',
           'Two parallel straight lines.'
         ],
@@ -3287,12 +3277,12 @@ e 0$)</span>
         tag: 'Synthesis · Vector Fields & Bonnet Isometry',
         q: 'Which statement accurately contrasts the Hairy Ball Theorem and the Catenoid–Helicoid deformation?',
         opts: [
-          'Every smooth tangent field on $S^2$ must vanish somewhere ($\chi=2$), while the catenoid–helicoid family preserves $I_p$, $K$, and $H=0$ as $II_p$ rotates.',
+          'Every smooth tangent field on $S^2$ must vanish somewhere ($\\chi=2$), while the catenoid–helicoid family preserves $I_p$, $K$, and $H=0$ as $II_p$ rotates.',
           'A torus cannot support a nowhere-vanishing vector field, and the catenoid–helicoid deformation changes $K$ while keeping $II_p$ fixed.',
           'A minimal surface always minimizes area globally for every boundary curve.'
         ],
         correct: 0,
-        exp: 'On $S^2$, $\chi=2$ forces singularities summing to $+2$ (unlike $T^2$ where $\chi=0$). Meanwhile, $\mathbf{x}_\theta$ bends the catenoid isometrically into the helicoid with $E,F,G,K,H$ unchanged.'
+        exp: 'On $S^2$, $\\chi=2$ forces singularities summing to $+2$ (unlike $T^2$ where $\\chi=0$). Meanwhile, $\\mathbf{x}_\\theta$ bends the catenoid isometrically into the helicoid with $E,F,G,K,H$ unchanged.'
       }
     ];
 
